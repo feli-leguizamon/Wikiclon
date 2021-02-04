@@ -113,10 +113,12 @@ router.post("/:urlTitle/edit",(req, res, next) => {
     .then((page) => {
         // recorre el req.body y va modificando cada valor de la pagina (por ejemplo, el titulo, el contenido) por lo que tenga req.body 
         for(var key in req.body) {
+            console.log("req body", req.body)
             page[key] = req.body[key]
         }
         page.save()
         .then((updatedPage) => {
+            console.log("updated page", updatedPage)
             res.redirect(updatedPage.route)
         })
     })

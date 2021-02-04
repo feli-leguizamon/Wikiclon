@@ -93,3 +93,4 @@ Page.findByTag = function(tag) {
 }
 
 module.exports = Page
+

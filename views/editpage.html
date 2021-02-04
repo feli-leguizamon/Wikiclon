@@ -23,11 +23,15 @@
     <div class="form-group">
         <label for = "status">Status:</label>
         <select name = "status">
-            <option selected = "{{page.status === 'open'}}">open</option>
-            <option selected = "{{page.status === 'closed'}}">closed</option>
+          {% if page.status === "open" %}
+          <option selected>open</option>
+          <option >closed</option>
+          {% else %}
+          <option>open</option>
+          <option selected>closed</option>
+          {% endif %}
         </select>
     </div>
-
 
     <div class="col-sm-offset-2 col-sm-10">
       <button type="submit" class="btn btn-primary">submit</button>
